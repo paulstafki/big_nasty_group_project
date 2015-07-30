@@ -47,14 +47,14 @@ $(document).ready(function(){
     });
     $("body").on('click', '.staffButton', function() {
         console.log("staffButton clicked!");
-
+        $.ajax({
+            url: "/data-request",
+            success: function(data){
+                console.log(data);
+            }
+        });
     });
 
-    $.ajax({
-        url: "/data-request",
-        success: function(data){
-            console.log(data.message);
-        }
-    });
+
 
 });
